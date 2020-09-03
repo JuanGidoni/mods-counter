@@ -37,6 +37,7 @@
 
 @media all and (max-width:800px){
   .new-year {
-    font-size:85px;
+      padding-top:35px;
+    font-size:115px;
   }
 }
