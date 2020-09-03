@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mods Counter by Jukxz 2020</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+.holder {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-image: url('./mods_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.new-year {
+  font-family: 'Major Mono Display', monospace;
+  color: #333333;
+  font-size: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  padding:0;margin:0;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+.new-year h1 {
+  margin:0;padding:20px 0;
+  color:white;
+  text-shadow: 0 2px 5px 5px #494949;
+}
+#status{
+  color:white;
+  font-size:22px;  
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding:0;margin:0;
+}
+  </style>
+</head>
+<body>
+  <div>
+      <div class="holder">
+        <div class="new-year">
+          <span id="status"></span>
+            <h1 class="newyear" id="count"></h1>
+        </div>
+      </div>
+  </div>
+  <script src="tmi.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
