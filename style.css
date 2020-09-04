@@ -1,43 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
-.holder {
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  width: 100%;
-  height: 100%;
-  background-image: url('./mods_logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.new-year {
-  font-family: 'Major Mono Display', monospace;
-  color: #333333;
-  font-size: 200px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  transform: translateX(-50%) translateY(-50%);
-  text-align: center;
-  margin:0;padding:20px 0;
-  color:white;
-  text-shadow: 0 2px 5px 5px #494949;
-}
 
-#status{
-  color:white;
-  font-size:22px;  
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  padding:0;margin:0;
-}
 
-@media all and (max-width:800px){
-  .new-year {
-      padding-top:125px;
-    font-size:115px;
-  }
+.btn-mod {
+  background-color: #01b031;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 75px;
+  cursor: pointer;
+}
+.btn-mod img {
+  vertical-align: middle;
+}
+.btn-vip {
+  background-color: #fb0fcb;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 75px;
+  cursor: pointer;
+}
+.btn-vip img {
+  vertical-align: middle;
+}
+.btn-chat {
+  background-color: #d3a423;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 75px;
+  cursor: pointer;
+}
+.btn-chat img {
+  vertical-align: middle;
 }

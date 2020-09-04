@@ -7,13 +7,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>
-      <div class="holder">
-        <div class="new-year">
-          <span id="status"></span>
-            <h1 class="newyear" id="count"></h1>
+        <div class="mods">
+          <button class="btn-mod"><img src="./mods_logo.png" width="75px" height="75px" alt="mods">
+            <span id="count-mods">0</span> <span id="moderadores">Mods</span></button>
         </div>
-      </div>
+        <div class="vips">
+          <button class="btn-vip"><img src="./vips_logo.png" width="75px" height="75px" alt="vips">
+            <span id="count-vips">0</span> <span id="vips">Vips</span></button>
+        </div>
+        <div class="chats">
+          <button class="btn-chat"><img src="./chat_logo.png" width="75px" height="75px" alt="vips">
+            <span id="count-chat">0</span></button>
+        </div>
+        <span id="status"></span>
   </div>
   <script src="tmi.min.js"></script>
   <script src="app.js"></script>
