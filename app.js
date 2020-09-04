@@ -32,6 +32,12 @@ let objMods = {};
 let vips = {};
 let followers = {};
 
+if(channel==='sopuuu'){
+  document.getElementById('btn1').style.backgroundColor = "#d8bfc1";
+  document.getElementById('btn2').style.backgroundColor = "#d8bfc1";
+  document.getElementById('btn3').style.backgroundColor = "#d8bfc1";
+}
+
 client.on('message', (wat, tags, message, self) => {
   if (self) return;
   console.log(tags);
