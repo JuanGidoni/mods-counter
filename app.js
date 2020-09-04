@@ -36,6 +36,25 @@ if(channel==='sopuuu'){
   document.getElementById('btn1').style.backgroundColor = "#d8bfc1";
   document.getElementById('btn2').style.backgroundColor = "#d8bfc1";
   document.getElementById('btn3').style.backgroundColor = "#d8bfc1";
+  document.getElementById('btn1').style.color = "#d8a0a0";
+  document.getElementById('btn2').style.color = "#d8a0a0";
+  document.getElementById('btn3').style.color = "#d8a0a0";
+}
+if(channel==='zeki'){
+  document.getElementById('btn1').style.backgroundColor = "#e8c42a";
+  document.getElementById('btn2').style.backgroundColor = "#e8c42a";
+  document.getElementById('btn3').style.backgroundColor = "#e8c42a";
+  document.getElementById('btn1').style.color = "#3f3f3f";
+  document.getElementById('btn2').style.color = "#3f3f3f";
+  document.getElementById('btn3').style.color = "#3f3f3f";
+}
+if(channel==='shulkka'){
+  document.getElementById('btn1').style.backgroundColor = "#a416f5";
+  document.getElementById('btn2').style.backgroundColor = "#a416f5";
+  document.getElementById('btn3').style.backgroundColor = "#a416f5";
+  document.getElementById('btn1').style.color = "#e9e9e9";
+  document.getElementById('btn2').style.color = "#e9e9e9";
+  document.getElementById('btn3').style.color = "#e9e9e9";
 }
 
 client.on('message', (wat, tags, message, self) => {
