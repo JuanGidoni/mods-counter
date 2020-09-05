@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
 
-
+.live {
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 65px;
+  cursor: pointer;
+  width:300px;
+  text-shadow: 1px 2px 5px rgba(0,0,0,.5);
+}
 .btn-mod {
   background-color: #01b031;
   border: none;
-  color: #d8a0a0;
+  color: white;
   padding: 12px 16px;
   font-size: 75px;
   cursor: pointer;
@@ -16,7 +24,7 @@
 .btn-vip {
   background-color: #fb0fcb;
   border: none;
-  color: #d8a0a0;
+  color: white;
   padding: 12px 16px;
   font-size: 75px;
   cursor: pointer;
@@ -26,7 +34,6 @@
   vertical-align: middle;
 }
 .btn-chat {
-  background-color: #d3a423;
   border: none;
   color: #d8a0a0;
   padding: 12px 16px;
@@ -37,8 +44,18 @@
 .btn-chat img {
   vertical-align: middle;
 }
+.btn-subs {
+  border: none;
+  color: #d8a0a0;
+  padding: 12px 16px;
+  font-size: 75px;
+  cursor: pointer;
+  text-shadow: 1px 2px 5px rgba(0,0,0,.5);
+}
+.btn-subs img {
+  vertical-align: middle;
+}
 .btn-sopu {
-  background-color: #d8bfc1;
   color:black; 
   border: none;
   padding: 12px 16px;
