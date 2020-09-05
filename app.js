@@ -91,6 +91,21 @@ if(color==='violeta'){
   document.getElementById('btn4').style.color = "#e9e9e9";
   document.getElementById('btn5').style.color = "#e9e9e9";
 }
+if(channel==='zeki'){
+  document.getElementById('btn1').style.backgroundColor = "#211f21";
+  document.getElementById('btn1').style.borderColor = "#eabc2b";
+  document.getElementById('btn1').style.borderWidth = "1 px";
+  document.getElementById('btn1').style.borderStyle = "solid";
+  document.getElementById('btn2').style.display = "none";
+  document.getElementById('btn3').style.display = "none";
+  document.getElementById('btn4').style.display = "none";
+  document.getElementById('btn5').style.display = "none";
+  document.getElementById('btn1').style.color = "#eabc2b";
+  document.getElementById('btn2').style.display = "none";
+  document.getElementById('btn3').style.display = "none";
+  document.getElementById('btn4').style.display = "none";
+  document.getElementById('btn5').style.display = "none";
+}
 
 client.on('message', (wat, tags, message, self) => {
   if (self) return;
