@@ -8,30 +8,32 @@
 </head>
 <body>
   <div class="live">
-    Chat Stats
+    <span id="status"></span>
   </div>
-        <div class="mods">
-          <button class="btn-mod" id="btn1">
+<div class="flex-container" id="loaded">
+        <div class="flex-item">
+          <button class="btn-mod flex-column" id="btn1">
             <span id="count-mods">0</span> <span id="moderadores">Mods</span></button>
         </div>
-        <div class="vips">
-          <button class="btn-vip" id="btn2">
+        <div class="flex-item">
+          <button class="btn-vip flex-column" id="btn2">
             <span id="count-vips">0</span> <span id="vips">Vips</span></button>
         </div>
-        <div class="subs">
-          <button class="btn-subs" id="btn4">
+        <div class="flex-item">
+          <button class="btn-subs flex-column" id="btn4">
             <span id="count-subs">0</span> <span id="subs">Subs</span></button>
         </div>
-        <div class="chats">
-          <button class="btn-chat" id="btn3">
+        <div class="flex-item">
+          <button class="btn-chat flex-column" id="btn3">
             <span id="count-chat">0</span> <span id="mensajes">Mensajes</span></button>
         </div>
-        <div class="viewers">
-          <button class="btn-chat" id="btn5">
+        <div class="flex-item">
+          <button class="btn-chat flex-column" id="btn5">
             <span id="count-chatt">0</span> <span id="mensajes">Chatters</span></button>
         </div>
-        <span id="status"></span>
   </div>
+  
+</div>
   <script src="tmi.min.js"></script>
   <script src="app.js"></script>
 </body>

@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
-
+body {
+  width:auto;
+}
 .live {
   border: none;
   color: white;
   padding: 12px 16px;
-  font-size: 65px;
+  font-size: 45px;
   cursor: pointer;
-  width:300px;
+  width:100%;
+  margin:0;
+  text-align:center;
   text-shadow: 1px 2px 5px rgba(0,0,0,.5);
 }
 .btn-mod {
@@ -14,8 +18,9 @@
   border: none;
   color: white;
   padding: 12px 16px;
-  font-size: 75px;
+  font-size: 35px;
   cursor: pointer;
+  width:100%;
   text-shadow: 1px 2px 5px rgba(0,0,0,.5);
 }
 .btn-mod img {
@@ -26,8 +31,9 @@
   border: none;
   color: white;
   padding: 12px 16px;
-  font-size: 75px;
+  font-size: 35px;
   cursor: pointer;
+  width:100%;
   text-shadow: 1px 2px 5px rgba(0,0,0,.5);
 }
 .btn-vip img {
@@ -37,7 +43,8 @@
   border: none;
   color: #d8a0a0;
   padding: 12px 16px;
-  font-size: 75px;
+  font-size: 35px;
+  width:100%;
   cursor: pointer;
   text-shadow: 1px 2px 5px rgba(0,0,0,.5);
 }
@@ -48,7 +55,8 @@
   border: none;
   color: #d8a0a0;
   padding: 12px 16px;
-  font-size: 75px;
+  font-size: 35px;
+  width:100%;
   cursor: pointer;
   text-shadow: 1px 2px 5px rgba(0,0,0,.5);
 }
@@ -59,9 +67,35 @@
   color:black; 
   border: none;
   padding: 12px 16px;
-  font-size: 75px;
+  font-size: 35px;
+  width:125px;
   cursor: pointer;
 }
 .btn-sopu img {
   vertical-align: middle;
+}
+.flex-container {
+  display: flex;
+  padding: 0;
+  justify-content: space-around;
+  margin: 0;
+  list-style: none;
+  align-content: stretch ;
+}
+#loaded{
+  visibility: hidden;
+}
+.flex-item {
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+.flex-column span{
+  display: flex;
+  flex-direction: column;
 }

@@ -19,6 +19,12 @@ const client = new tmi.Client({
 const resetCounter = () =>{
   setTimeout(function(){
     statusElement.textContent = '';
+    countMElement.textContent = '0';
+    countVElement.textContent = '0';
+    countCElement.textContent = '0';
+    countCCElement.textContent = '0';
+    countSElement.textContent = '0';
+    document.getElementById('loaded').style.visibility = "visible";
   },3000);
 }
 
@@ -73,14 +79,6 @@ if(channel==='sopuuu'){
   document.getElementById('btn4').style.color = "#d8a0a0";
   document.getElementById('btn5').style.color = "#d8a0a0";
 }
-if(channel==='zeki'){
-  document.getElementById('btn1').style.backgroundColor = "#e8c42a";
-  document.getElementById('btn2').style.backgroundColor = "#e8c42a";
-  document.getElementById('btn3').style.backgroundColor = "#e8c42a";
-  document.getElementById('btn1').style.color = "#3f3f3f";
-  document.getElementById('btn2').style.color = "#3f3f3f";
-  document.getElementById('btn3').style.color = "#3f3f3f";
-}
 if(color==='violeta'){
   document.getElementById('btn1').style.backgroundColor = "#a416f5";
   document.getElementById('btn2').style.backgroundColor = "#a416f5";
@@ -120,76 +118,82 @@ client.on('message', (wat, tags, message, self) => {
   }
   if (u === s && m === '!clear') {
       countMElement.textContent = '';
+      countVElement.textContent = '';
+      countsElement.textContent = '';
+      countCCElement.textContent = '';
+      countCElement.textContent = '';
+      total = 0;
       objMods = {};
+      vips = {};
+      subs = {};
+      chatters = {};
   }
-  if (m && mod) {
-    objMods[tags.username] = true;
-    // display current count page.
-    countMElement.textContent = Object.keys(objMods).length;
-    Object.keys(objMods).join(', ');  
-  if(Object.keys(objMods).length===1){
-    document.getElementById('moderadores').textContent = 'Mod';
-  }else{
-    document.getElementById('moderadores').textContent = 'Mods';
-  }
-  if(mod && subscriber){
-    subs[tags.username] = true;
-    // display current count page.
-    countSElement.textContent = Object.keys(subs).length;
-    Object.keys(subs).join(', ');
+  if (mod) {
+        objMods[tags.username] = true;
+        countMElement.textContent = Object.keys(objMods).length;
+        Object.keys(objMods).join(', ');  
+    if(Object.keys(objMods).length===1){
+        document.getElementById('moderadores').textContent = 'Mod';
+    }else{
+        document.getElementById('moderadores').textContent = 'Mods';
+    }
+    if(subscriber){
+        subs[tags.username] = true;
+        countSElement.textContent = Object.keys(subs).length;
+        Object.keys(subs).join(', ');
+          if(Object.keys(subs).length===1){
+              document.getElementById('subs').textContent = 'Sub';
+          }else{
+              document.getElementById('subs').textContent = 'Subs';
+          }
+    }
+    if(m === `chau ${s}` && mod){
+        delete objMods[tags.username];
+        delete subs[tags.username];
+        countMElement.textContent = Object.keys(objMods).length;
+        countSElement.textContent = Object.keys(subs).length;
+    }
+  }else if(subscriber){
+        subs[tags.username] = true;
+        // display current count page.
+        countSElement.textContent = Object.keys(subs).length;
+        Object.keys(subs).join(', ');
   if(Object.keys(subs).length===1){
-    document.getElementById('subs').textContent = 'Sub';
+        document.getElementById('subs').textContent = 'Sub';
   }else{
-    document.getElementById('subs').textContent = 'Subs';
+        document.getElementById('subs').textContent = 'Subs';
   }
-  }
-  if(m === `chau ${s}` && mod){
-    delete objMods[tags.username];
-    countMElement.textContent = Object.keys(objMods).length;
-  }
-  }else if(m && subscriber){
-    subs[tags.username] = true;
+  if(v.vip==='1'){
+        vips[tags.username] = true;
     // display current count page.
-    countSElement.textContent = Object.keys(subs).length;
-    Object.keys(subs).join(', ');
-  if(Object.keys(subs).length===1){
-    document.getElementById('subs').textContent = 'Sub';
-  }else{
-    document.getElementById('subs').textContent = 'Subs';
+        countVElement.textContent = Object.keys(vips).length;
+        Object.keys(vips).join(', ');
+    if(Object.keys(vips).length===1){
+        document.getElementById('vips').textContent = 'Vip';
+    }else{
+        document.getElementById('vips').textContent = 'Vips';
+    }
   }
   if(m === `chau ${s}` && subscriber){
-    delete subs[tags.username];
-    countSElement.textContent = Object.keys(subs).length;
+        delete subs[tags.username];
+        delete vips[tags.username];
+        countSElement.textContent = Object.keys(subs).length;
+        countVElement.textContent = Object.keys(vips).length;
   }
+  }else if(v.vip==='1'){ 
+        vips[tags.username] = true;
+        // display current count page.
+        countVElement.textContent = Object.keys(vips).length;
+        Object.keys(vips).join(', ');
+    if(Object.keys(vips).length===1){
+        document.getElementById('vips').textContent = 'Vip';
+    }else{
+        document.getElementById('vips').textContent = 'Vips';
+    }
   }else if(!v){
-    chatters[tags.username] = true;
-    Object.keys(chatters).join(', ');
-    countCCElement.textContent = Object.keys(chatters).length; 
-  }else if (m && v.vip === '1') {
-    vips[tags.username] = true;
-    // display current count page.
-    countVElement.textContent = Object.keys(vips).length;
-    Object.keys(vips).join(', ');
-  if(Object.keys(vips).length===1){
-    document.getElementById('vips').textContent = 'Vip';
-  }else{
-    document.getElementById('vips').textContent = 'Vips';
-  }
-  if(subscriber && v.vip==='1'){
-    subs[tags.username] = true;
-    // display current count page.
-    countSElement.textContent = Object.keys(subs).length;
-    Object.keys(subs).join(', ');
-  if(Object.keys(subs).length===1){
-    document.getElementById('subs').textContent = 'Sub';
-  }else{
-    document.getElementById('subs').textContent = 'Subs';
-  }
-  }
-  if(m === `chau ${s}` && v.vip ==='1'){
-    delete vips[tags.username];
-    countVElement.textContent = Object.keys(vips).length;
-  }
-  }
-
+        chatters[tags.username] = true;
+        Object.keys(chatters).join(', ');
+        countCCElement.textContent = Object.keys(chatters).length; 
+  };
 });
+
